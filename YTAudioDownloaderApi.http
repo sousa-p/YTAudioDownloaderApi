@@ -1,0 +1,6 @@
+@YTAudioDownloaderApi_HostAddress = http://localhost:5222
+
+GET {{YTAudioDownloaderApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
