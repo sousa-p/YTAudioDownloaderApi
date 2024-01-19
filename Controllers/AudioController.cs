@@ -20,14 +20,17 @@ public class AudioController : ControllerBase
   }
 
   [HttpPost("playlist")]
-  public IActionResult DownloadPlaylistUrl(string url,  bool rmVideos = true)
+  public IActionResult DownloadPlaylistUrl(List<string> playlist,  bool rmVideos = true)
   {
-    if (_videoService.IsPlaylistUrl(url)) {
-      var videosPath = _videoService.DownloadVideos(url);
-      return Ok(_audioService.ConvertVideosToAudio(videosPath, rmVideos));
+    List<string> endpoints = new();
+    foreach (var url in playlist) {
+      if (_videoService.IsVideoUrl(url)) {
+        var videoPath = _videoService.DownloadVideo(url);
+        endpoints.Add(_audioService.ConvertVideoToAudio(videoPath, rmVideos));
+      } else {
+        endpoints.Add($"{url} Invalid video Url");
+      }
     }
-    
-    return BadRequest("Invalid playlist Url");
+    return Ok(endpoints);
   }
-
 }

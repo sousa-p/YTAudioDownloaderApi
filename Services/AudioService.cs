@@ -8,16 +8,6 @@ namespace YTAudioDownloader.Services;
 class AudioService {
   public AudioService() {}
 
-  public List<string> ConvertVideosToAudio(List<string> videosPath, bool rmVideos = true) {
-    List<string> endpoints = new();
-
-    foreach (var video in videosPath) {
-      endpoints.Add(ConvertVideoToAudio(video, rmVideos));
-    }
-
-    return endpoints;
-  }
-
   public string ConvertVideoToAudio(string videoPath, bool rmVideo = true) {
     var outputPath = _transformToOutputPath(videoPath);
     string ffmpegCommand = $"ffmpeg -i {videoPath} -vn -acodec mp3 {outputPath}";

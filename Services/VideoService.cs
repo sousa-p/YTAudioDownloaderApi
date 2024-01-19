@@ -12,18 +12,6 @@ class VideoService {
     _source = source ?? @"./downloads/";
   }
 
-  public List<string> DownloadVideos(string playlistUrl) {
-    var playlist = YouTube.Default.GetAllVideos(playlistUrl);
-    List<string> endpoints = new();
-
-    foreach (var video in playlist) {
-      endpoints.Add(DownloadVideo(video.Uri));
-    }
-
-    return endpoints;
-  }
-
-
   public string DownloadVideo(string videoUrl) {
     try {
       var youTube = YouTube.Default;
@@ -50,12 +38,9 @@ class VideoService {
       .Replace(".", "")
       .Replace("-", "")
       .Replace("\"", "")
-      .Replace("'", "");
-  }
-
-  public bool IsPlaylistUrl(string url)
-  {
-    return url.Contains("youtube.com/playlist");
+      .Replace("'", "")
+      .Replace("(", "")
+      .Replace(")", "");
   }
 
   public bool IsVideoUrl(string url)

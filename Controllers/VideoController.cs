@@ -17,12 +17,17 @@ public class VideoController : ControllerBase
   }
 
   [HttpPost("playlist")]
-  public IActionResult DownloadPlaylistUrl(string url)
+  public IActionResult DownloadPlaylistUrl(List<string> playlist)
   {
-    if (_videoService.IsPlaylistUrl(url))
-      return Ok(_videoService.DownloadVideos(url));
-    
-    return BadRequest("Invalid playlist Url");
+    List<string> endpoints = new();
+    foreach (var url in playlist) {
+      endpoints.Add(
+        (_videoService.IsVideoUrl(url))
+          ? _videoService.DownloadVideo(url)
+          : $"{url} Invalid video Url"
+      );
+    }
+    return Ok(endpoints);
   }
 
 }
