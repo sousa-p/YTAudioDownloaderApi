@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YTAudioDownloaderApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5b6b45d7a2cae88cbde495990758d1538e1f6fb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d14d72d953193dde26cd0bc08f487112ef94577")]
 [assembly: System.Reflection.AssemblyProductAttribute("YTAudioDownloaderApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YTAudioDownloaderApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

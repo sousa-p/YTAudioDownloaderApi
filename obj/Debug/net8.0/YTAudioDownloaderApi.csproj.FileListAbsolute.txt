@@ -40,4 +40,3 @@
 /home/sousa/Documents/Projetos/YTAudioDownloaderApi/bin/Debug/net8.0/libmp3lame.64.dll
 /home/sousa/Documents/Projetos/YTAudioDownloaderApi/bin/Debug/net8.0/NAudio.Core.dll
 /home/sousa/Documents/Projetos/YTAudioDownloaderApi/bin/Debug/net8.0/NAudio.Lame.dll
-/home/sousa/Documents/Projetos/YTAudioDownloaderApi/bin/Debug/net8.0/MediaToolkit.dll

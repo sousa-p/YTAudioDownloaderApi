@@ -10,11 +10,11 @@
         "projectUniqueName": "/home/sousa/Documents/Projetos/YTAudioDownloaderApi/YTAudioDownloaderApi.csproj",
         "projectName": "YTAudioDownloaderApi",
         "projectPath": "/home/sousa/Documents/Projetos/YTAudioDownloaderApi/YTAudioDownloaderApi.csproj",
-        "packagesPath": "/home/sousa/.nuget/packages/",
+        "packagesPath": "/root/.nuget/packages/",
         "outputPath": "/home/sousa/Documents/Projetos/YTAudioDownloaderApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/sousa/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -38,10 +38,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "MediaToolKit": {
-              "target": "Package",
-              "version": "[1.1.0.1, )"
-            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.1, )"
