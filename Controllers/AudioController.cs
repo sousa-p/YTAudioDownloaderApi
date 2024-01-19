@@ -5,35 +5,29 @@ using Microsoft.AspNetCore.Mvc;
 [ApiController]
 public class AudioController : ControllerBase
 {
-  private static AudioService _service = new();
+  private static VideoService _videoService = new();
+  private static AudioService _audioService = new();
 
   [HttpPost]
-  public IActionResult DownloadUrl(string url)
+  public IActionResult DownloadAudioUrl(string url, bool rmVideo = true)
   {
-    if (_service.IsPlaylistUrl(url))
-      return Ok(_service.DownloadAudios(url));
+    if (_videoService.IsVideoUrl(url)) {
+      var videoPath = _videoService.DownloadVideo(url);
+      return Ok(_audioService.ConvertVideoToAudio(videoPath, rmVideo));
+    }
     
-    if (_service.IsVideoUrl(url))
-      return Ok(_service.DownloadAudio(url));
-    
-    return BadRequest("Invalid Url");
+    return BadRequest("Invalid video Url");
   }
 
   [HttpPost("playlist")]
-  public IActionResult DownloadPlaylistUrl(string url)
+  public IActionResult DownloadPlaylistUrl(string url,  bool rmVideos = true)
   {
-    if (_service.IsPlaylistUrl(url))
-      return Ok(_service.DownloadAudios(url));
+    if (_videoService.IsPlaylistUrl(url)) {
+      var videosPath = _videoService.DownloadVideos(url);
+      return Ok(_audioService.ConvertVideosToAudio(videosPath, rmVideos));
+    }
     
     return BadRequest("Invalid playlist Url");
   }
 
-  [HttpPost("video")]
-  public IActionResult DownloadVideoUrl(string url)
-  {
-    if (_service.IsVideoUrl(url))
-      return Ok(_service.DownloadAudio(url));
-    
-    return BadRequest("Invalid video Url");
-  }
 }
