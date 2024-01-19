@@ -38,13 +38,29 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "MediaToolKit": {
+              "target": "Package",
+              "version": "[1.1.0.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.1, )"
             },
+            "NAudio.Lame": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "VideoLibrary": {
+              "target": "Package",
+              "version": "[3.2.3, )"
             }
           },
           "imports": [
