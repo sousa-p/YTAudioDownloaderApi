@@ -1,6 +1,31 @@
 @YTAudioDownloaderApi_HostAddress = http://localhost:5222
 
-GET {{YTAudioDownloaderApi_HostAddress}}/weatherforecast/
-Accept: application/json
+POST {{YTAudioDownloaderApi_HostAddress}}/api/audio?url=https://www.youtube.com/watch?v=tbnLqRW9Ef0
+
+{
+  "url": "https://www.youtube.com/watch?v=tbnLqRW9Ef0"
+}
 
 ###
+
+POST {{YTAudioDownloaderApi_HostAddress}}/api/audio/playlist
+
+[
+  "https://www.youtube.com/watch?v=tbnLqRW9Ef0",
+  "https://www.youtube.com/watch?v=tbnLqRW9Ef0"
+]
+
+###
+
+POST {{YTAudioDownloaderApi_HostAddress}}/api/video?url=https://www.youtube.com/watch?v=tbnLqRW9Ef0
+
+###
+
+POST {{YTAudioDownloaderApi_HostAddress}}/api/video/playlist
+
+[
+  "https://www.youtube.com/watch?v=tbnLqRW9Ef0",
+  "https://www.youtube.com/watch?v=tbnLqRW9Ef0"
+]
+
+
