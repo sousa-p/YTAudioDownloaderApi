@@ -45,6 +45,6 @@ class VideoService {
 
   public bool IsVideoUrl(string url)
   {
-    return url.Contains("youtube.com/watch");
+    return url.Contains("https://www.youtube.com/watch") || url.Contains("https://youtu.be/");
   }
 }

@@ -2,13 +2,10 @@
 
 POST {{YTAudioDownloaderApi_HostAddress}}/api/audio?url=https://www.youtube.com/watch?v=tbnLqRW9Ef0
 
-{
-  "url": "https://www.youtube.com/watch?v=tbnLqRW9Ef0"
-}
-
 ###
 
 POST {{YTAudioDownloaderApi_HostAddress}}/api/audio/playlist
+Content-Type: application/json
 
 [
   "https://www.youtube.com/watch?v=tbnLqRW9Ef0",
@@ -22,10 +19,11 @@ POST {{YTAudioDownloaderApi_HostAddress}}/api/video?url=https://www.youtube.com/
 ###
 
 POST {{YTAudioDownloaderApi_HostAddress}}/api/video/playlist
+Content-Type: application/json
 
 [
   "https://www.youtube.com/watch?v=tbnLqRW9Ef0",
   "https://www.youtube.com/watch?v=tbnLqRW9Ef0"
 ]
 
-
+###
